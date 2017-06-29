@@ -1,8 +1,12 @@
-html, body, div, img, input {
+html, body, div, img, input, h1 {
   margin: 0;
   padding: 0;
   border: none;
   background: transparent;
   box-sizing: border-box;
   font: inherit;
+}
+
+html, body {
+  height: 100%;
 }

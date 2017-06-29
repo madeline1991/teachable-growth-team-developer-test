@@ -1,0 +1,22 @@
+body {
+  display: flex;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container > img {
+  object-fit: cover;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+}
+
+/*.image-container div {
+  position: absolute;
+  background: red;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}*/
