@@ -1,0 +1,27 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 100px;
+  height: 41%;
+}
+
+.search h1 {
+  font-size: 24px;
+  margin: 0px 0px 34px 40px;
+}
+
+.search form {
+  border: 1px solid grey;
+  padding: 19px 24px;
+  border-radius: 26px;
+  width: 500px;
+}
+
+.search input {
+  width: 94%;
+}
+
+input:focus, button:focus {
+   outline: none;
+}
