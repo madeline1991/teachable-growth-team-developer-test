@@ -4,19 +4,37 @@ body {
 
 .image-container {
   position: relative;
+  width: 30%;
 }
 
-.image-container > img {
-  object-fit: cover;
-  width: auto;
+.image-container > img:first-child {
   height: 100%;
   max-width: 100%;
 }
 
-/*.image-container div {
+.image-container > div {
   position: absolute;
-  background: red;
   top: 0px;
   right: 0px;
-  z-index: 1;
-}*/
+}
+
+.image-container div img {
+  margin: 50px 50px 0px 0px;
+}
+
+.links {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 50%;
+}
+
+.links a {
+  padding: 11px 55px 11px 11px;
+  color: white;
+}
+
+.links a:hover {
+  background: rgba(227, 227, 227, 0.13);
+}
