@@ -1,8 +1,10 @@
 <!-- Please build the search page here. -->
 <div class="search">
   <h1>Search Gems</h1>
-  <form>
-    <input type="text" placeholder="Search">
-    <%= image_tag("magnifying-glass.png") %>
+  <form action="<%= gems_url %>" method="get">
+    <input type="text" placeholder="Search" value="">
+    <button>
+      <%= image_tag("magnifying-glass.png") %>
+    </button>
   </form>
 </div>
