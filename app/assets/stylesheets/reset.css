@@ -1,4 +1,4 @@
-html, body, div, img, input, h1, a, button {
+html, body, div, img, input, h1, a, button, li {
   margin: 0;
   padding: 0;
   border: none;
@@ -16,4 +16,8 @@ html, body {
 a:hover {
   cursor: pointer;
   text-decoration: none;
+}
+
+li {
+  list-style: none;
 }
