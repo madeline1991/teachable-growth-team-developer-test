@@ -25,3 +25,25 @@
 input:focus, button:focus {
    outline: none;
 }
+
+.error form {
+  border: 1px solid red;
+}
+
+.error h2 {
+  color: red;
+  font-size: 22px;
+  text-align: center;
+}
+
+.error input {
+  color: red;
+}
+
+.error button {
+  color: red;
+}
+
+.error img {
+  filter: contrast(80%) sepia(100%) hue-rotate(315deg) brightness(71%) saturate(600);
+}

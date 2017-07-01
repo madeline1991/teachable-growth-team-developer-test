@@ -1,10 +1,26 @@
 
 <div>
-  <%= render "partials/search" %>
-    <h3><%= @gem["name"] %></h3>
-    <h2>INFORMATION</h2>
-      <p><%= @gem["info"] %></p>
-    <h2>DEPENDENCIES</h2>
-      <ul>
-      </ul>
+  <%= render "partials/search", search_term: @search_term %>
+
+  <% unless flash[:errors] %>
+    <div>
+      <h4><%= @gem["name"] %></h3>
+      <h3>INFORMATION</h2>
+        <p><%= @gem["info"] %></p>
+      <h3>DEPENDENCIES</h2>
+        <% if @dependencies.empty? %>
+          <p>None</p>
+        <% else %>
+          <ul>
+            <% @dependencies.each do |dependency| %>
+              <li>
+                <h4>
+                  <%= dependency["name"] %>
+                </h4>
+              </li>
+            <% end %>
+            </ul>
+        <% end %>
+    </div>
+  <% end %>
 </div>

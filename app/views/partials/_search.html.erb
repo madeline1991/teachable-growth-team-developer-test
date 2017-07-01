@@ -1,9 +1,20 @@
-<div class="search">
+<% if flash[:errors] %>
+  <% error = "error" %>
+  <% text = flash[:errors] %>
+<% else %>
+  <% error = "" %>
+  <% text = "" %>
+<% end %>
+
+<div class="search <%= error %>">
   <h1>Search Gems</h1>
-  <form action="<%= gems_url %>" method="get">
-    <input id="search_term" type="text" name="gem[search_term]" placeholder="Search" value="">
+  <form class= "" action="<%= gems_url %>" method="get">
+    <input id="search_term" type="text" name="gem[search_term]" placeholder="Search" value="<%= search_term %>">
     <button>
       <%= image_tag("magnifying-glass.png") %>
     </button>
   </form>
+  <h2>
+    <%= text %>
+  </h2>
 </div>
