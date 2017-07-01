@@ -1,3 +1,28 @@
-// Place all the styles related to the gems controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.gem-details {
+  margin: 45px 0 0 140px;
+}
+
+.gem-details h3 {
+  font-size: 16px;
+}
+
+.gem-details p {
+  color: 	#C0C0C0;
+}
+
+.gem-details li {
+  margin-bottom: 15px;
+}
+
+.gem-details a {
+  color: 	#1E90FF;
+}
+
+.gem-details a:hover {
+  text-decoration: underline;
+  color: 	#0080FF;
+}
+
+.gem-details h3 {
+  margin: 35px 0 10px 0;
+}
