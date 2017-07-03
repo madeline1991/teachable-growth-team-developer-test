@@ -1,6 +1,7 @@
 $(document).ready(function () {
   const $favorites = $('#favorites-list')
   let storage = getLocalStorage();
+  const toggle = $favorites.length > 0 ? setFavoritesStarToggle : setSearchStarToggle;
 
   if ($favorites.length > 0) {
     loadFavorites($favorites, storage);
@@ -8,9 +9,8 @@ $(document).ready(function () {
   } else {
     searchPageSelected();
   }
-
   swapStars(storage);
-  setStarToggle();
+  toggle();
 });
 
 const loadFavorites = ($listContainer, storage) => {
@@ -29,6 +29,7 @@ const loadFavorites = ($listContainer, storage) => {
 
 const swapStars = (storage) => {
   let starButtons = $(".toggle")
+
   for(let i = 0; i < starButtons.length; i++) {
     const $button = $(starButtons[i]);
     let gem = $button.attr('id');
@@ -38,22 +39,30 @@ const swapStars = (storage) => {
   };
 }
 
-const setStarToggle = () => {
+const setSearchStarToggle = () => {
   $(".toggle").click(function(e) {
     let storage = getLocalStorage();
     const $image = $(e.target);
     const gem = $image.parent().attr('id');
     if (storage.includes(gem)) {
-      let index = storage.indexOf(gem)
-      let newStorage = storage.slice(0, index).concat(storage.slice(index + 1))
-      setLocalStorage(newStorage);
-      $image.attr("src", '<%= asset_path("star-gray.png") %>')
+      setGrayStar(gem, storage, $image);
     } else {
-      storage.push(gem)
-      setLocalStorage(storage);
-      $image.attr("src", '<%= asset_path("star-blue.png") %>')
+      setBlueStar(gem, storage, $image);
     }
   });
+}
+
+const setFavoritesStarToggle = () => {
+  $(".toggle").click(function(e) {
+    let storage = getLocalStorage();
+    const $favorites = $('#favorites-list')
+    const $image = $(e.target);
+    const gem = $image.parent().attr('id');
+    const $itemToRemove = $image.parent().parent()
+    $itemToRemove.remove()
+    setLocalStorage(newStorage(gem, storage))
+    addNoneToFavorites(storage.length - 1, $favorites)
+  })
 }
 
 const getLocalStorage = () => {
@@ -76,4 +85,27 @@ const favoritesPageSelected = () => {
 const searchPageSelected = () => {
   $("#favorites-link").removeClass("current-page");
   $("#search-link").addClass("current-page");
+}
+
+const setGrayStar = (gem, storage, $image) => {
+  setLocalStorage(newStorage(gem, storage));
+  $image.attr("src", '<%= asset_path("star-gray.png") %>')
+}
+
+const setBlueStar = (gem, storage, $image) => {
+  storage.push(gem)
+  setLocalStorage(storage);
+  $image.attr("src", '<%= asset_path("star-blue.png") %>')
+}
+
+const newStorage = (gem, storage) => {
+  let index = storage.indexOf(gem)
+  return storage.slice(0, index).concat(storage.slice(index + 1))
+}
+
+const addNoneToFavorites = (storage, $favorites) => {
+  if (storage === 0) {
+    $favorites.append("<li>None</li>")
+  }
+
 }

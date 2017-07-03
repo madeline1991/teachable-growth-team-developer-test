@@ -11,17 +11,21 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 300px;
-  width: 1000px;
+    /*width: 1000px;*/
   /*background: blue;*/
 }
 
 .favorites li {
-  /*width: 310px;*/
-  /*margin-right: 10px;*/
-  margin-right: 210px;*/
-  /*margin-left: 210px;
+  color: gray;
+  margin-right: 230px;
 }
 
 .favorites a {
   margin-left: 10px;
+}
+
+
+  /*width: 310px;*/
+  /*margin-right: 10px;*/
+  /*margin-left: 210px;
 }
