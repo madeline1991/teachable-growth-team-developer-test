@@ -3,6 +3,9 @@
   <% unless flash[:errors] %>
     <div id="gem-details" class="gem-details">
       <a href="https://rubygems.org/gems/<%= @gem["name"] %>"><%= @gem["name"] %></a>
+      <button id="<%= @gem["name"] %>" class="toggle">
+        <%= image_tag("star-gray.png") %>
+      </button>
       <h3>INFORMATION</h3>
         <p><%= @gem["info"] %></p>
       <h3>DEPENDENCIES</h3>
