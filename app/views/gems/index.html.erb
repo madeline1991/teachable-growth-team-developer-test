@@ -1,7 +1,7 @@
 <div>
   <%= render "partials/search", search_term: @search_term %>
   <% unless flash[:errors] %>
-    <div id="gem-details" class="gem-details">
+    <div id="gem-details" class="gem-details gem">
       <a href="https://rubygems.org/gems/<%= @gem["name"] %>"><%= @gem["name"] %></a>
       <button id="<%= @gem["name"] %>" class="toggle">
         <%= image_tag("star-gray.png") %>
