@@ -1,0 +1,28 @@
+.favorites {
+  margin-top: 195px;
+}
+
+.favorites h1 {
+  font-size: 38px;
+  margin-bottom: 77px;
+}
+
+.favorites ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 1000px;
+  /*background: blue;*/
+}
+
+.favorites li {
+  /*width: 310px;*/
+  /*margin-right: 10px;*/
+  margin-right: 210px;*/
+  /*margin-left: 210px;
+}
+
+.favorites a {
+  margin-left: 10px;
+}
