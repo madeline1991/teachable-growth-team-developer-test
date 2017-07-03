@@ -4,6 +4,9 @@ $(document).ready(function () {
 
   if ($favorites.length > 0) {
     loadFavorites($favorites, storage);
+    favoritesPageSelected();
+  } else {
+    searchPageSelected();
   }
 
   swapStars(storage);
@@ -58,4 +61,14 @@ const setLocalStorage = (array) => {
 
 const returnButton = (gem) => {
     return '<button id=\"' + gem + '\" class="toggle">' + '<%= image_tag("star-gray.png") %>' + '</button>'
+}
+
+const favoritesPageSelected = () => {
+  $("#favorites-link").addClass("current-page");
+  $("#search-link").removeClass("current-page");
+}
+
+const searchPageSelected = () => {
+  $("#favorites-link").removeClass("current-page");
+  $("#search-link").addClass("current-page");
 }

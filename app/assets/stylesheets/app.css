@@ -35,10 +35,14 @@ body {
   color: white;
 }
 
-.links a:hover {
+/*.links a:hover {
   background: rgba(227, 227, 227, 0.13);
-}
+}*/
 
 .search, .favorites {
   margin-left: 100px;
+}
+
+.current-page {
+  background: rgba(227, 227, 227, 0.13);
 }
