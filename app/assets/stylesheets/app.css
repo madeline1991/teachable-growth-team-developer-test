@@ -15,6 +15,8 @@ h1 {
   width: 30%;
   background-image: image-url("map.png");
   background-size:cover;
+  background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
+   background-repeat:no-repeat;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -40,7 +42,7 @@ h1 {
 }
 
 .links a {
-  padding: 11px 55px 11px 11px;
+  padding: 11px 70px 11px 11px;
   color: white;
 }
 
