@@ -1,7 +1,25 @@
 $(document).ready(function () {
+  const $favorites = $('#favorites-list')
+
+  if ($favorites.length > 0) {
+    loadFavorites($favorites);
+  }
+  
   swapStars();
   setStarToggle();
 });
+
+const loadFavorites = ($listContainer) => {
+  let storage = getLocalStorage();
+  for(let i = 0; i < storage.length; i++) {
+    const gem = storage[i];
+    const button = returnButton(gem);
+    const link = "<a href=\"https://rubygems.org/gems/" + gem +"\">" + gem + "</a>"
+    const element = "<li>" + button + link + "</li>"
+    debugger
+  $listContainer.append(element);
+  }
+}
 
 const swapStars = () => {
   let storage = getLocalStorage();
@@ -39,4 +57,8 @@ const getLocalStorage = () => {
 
 const setLocalStorage = (array) => {
   localStorage.setItem("favorites", JSON.stringify(array));
+}
+
+const returnButton = (gem) => {
+    return '<button id=\"' + gem + '\" class="toggle">' + '<%= image_tag("star-gray.png") %>' + '</button>'
 }
