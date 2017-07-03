@@ -5,11 +5,8 @@ body {
 .image-container {
   position: relative;
   width: 30%;
-}
-
-.image-container > img:first-child {
-  height: 100%;
-  max-width: 100%;
+  background-image: image-url("map.png");
+  background-size:cover;
 }
 
 .image-container > div {
@@ -23,7 +20,6 @@ body {
 }
 
 .links {
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -35,9 +31,6 @@ body {
   color: white;
 }
 
-/*.links a:hover {
-  background: rgba(227, 227, 227, 0.13);
-}*/
 
 .search, .favorites {
   margin-left: 100px;
