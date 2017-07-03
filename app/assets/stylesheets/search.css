@@ -3,23 +3,32 @@
   flex-direction: column;
   justify-content: flex-end;
   height: 41%;
+  width: 780px;
 }
 
 .search h1 {
-  font-size: 24px;
   margin: 0px 0px 34px 40px;
 }
 
 .search form {
   border: 1px solid grey;
-  padding: 19px 24px;
-  border-radius: 26px;
-  width: 500px;
+  padding: 28px 24px;
+  border-radius: 40px;
+  width: 750px;
 }
 
 .search input {
   width: 94%;
 }
+
+.search button {
+  margin-left: 2px;
+}
+
+  /*.search button img {
+    height: auto;
+    width: 17px;
+  }*/
 
 input:focus, button:focus {
    outline: none;
@@ -33,6 +42,7 @@ input:focus, button:focus {
   color: red;
   font-size: 22px;
   text-align: center;
+  margin-top: 22px;
 }
 
 .error input {

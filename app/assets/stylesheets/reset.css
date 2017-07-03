@@ -11,10 +11,6 @@ html, body, div, img, input, h1, a, button, ul, li, h2, h3 {
   font-family: 'Roboto', sans-serif;
 }
 
-html, body {
-  height: 100%;
-}
-
 a:hover {
   cursor: pointer;
   text-decoration: none;
