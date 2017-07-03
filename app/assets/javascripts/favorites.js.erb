@@ -1,6 +1,23 @@
-$(document).ready(function (){
+$(document).ready(function () {
+  swapStars();
+  setStarToggle();
+});
+
+const swapStars = () => {
+  let storage = getLocalStorage();
+  let starButtons = $(".toggle")
+  for(let i = 0; i < starButtons.length; i++) {
+    const $button = $(starButtons[i]);
+    let gem = $button.attr('id');
+    if (storage.includes(gem)) {
+      $($button.children()).attr("src", '<%= asset_path("star-blue.png") %>');
+    };
+  };
+}
+
+const setStarToggle = () => {
   $(".toggle").click(function(e) {
-    let storage = JSON.parse(localStorage.getItem("favorites")) || [];
+    let storage = getLocalStorage();
     const $image = $(e.target);
     const gem = $image.parent().attr('id');
     if (storage.includes(gem)) {
@@ -14,7 +31,11 @@ $(document).ready(function (){
       $image.attr("src", '<%= asset_path("star-blue.png") %>')
     }
   });
-});
+}
+
+const getLocalStorage = () => {
+  return JSON.parse(localStorage.getItem("favorites")) || [];
+}
 
 const setLocalStorage = (array) => {
   localStorage.setItem("favorites", JSON.stringify(array));
