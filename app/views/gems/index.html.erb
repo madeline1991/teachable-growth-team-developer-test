@@ -1,11 +1,11 @@
 <div>
   <%= render "partials/search", search_term: @search_term %>
   <% unless flash[:errors] %>
-    <div class="gem-details">
+    <div id="gem-details" class="gem-details">
       <a href="https://rubygems.org/gems/<%= @gem["name"] %>"><%= @gem["name"] %></a>
-      <h3>INFORMATION</h2>
+      <h3>INFORMATION</h3>
         <p><%= @gem["info"] %></p>
-      <h3>DEPENDENCIES</h2>
+      <h3>DEPENDENCIES</h3>
         <% if @dependencies.empty? %>
           <p>None</p>
         <% else %>
@@ -13,6 +13,9 @@
             <% @dependencies.each do |dependency| %>
               <li>
                 <a href="https://rubygems.org/gems/<%= dependency["name"] %>"><%= dependency["name"] %></a>
+                <button id="<%= dependency["name"] %>" class="toggle">
+                  <%= image_tag("star-gray.png") %>
+                </button>
               </li>
             <% end %>
             </ul>

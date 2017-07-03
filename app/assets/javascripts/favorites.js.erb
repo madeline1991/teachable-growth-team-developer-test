@@ -1,0 +1,21 @@
+$(document).ready(function (){
+  $(".toggle").click(function(e) {
+    let storage = JSON.parse(localStorage.getItem("favorites")) || [];
+    const $image = $(e.target);
+    const gem = $image.parent().attr('id');
+    if (storage.includes(gem)) {
+      let index = storage.indexOf(gem)
+      let newStorage = storage.slice(0, index).concat(storage.slice(index + 1))
+      setLocalStorage(newStorage);
+      $image.attr("src", '<%= asset_path("star-gray.png") %>')
+    } else {
+      storage.push(gem)
+      setLocalStorage(storage);
+      $image.attr("src", '<%= asset_path("star-blue.png") %>')
+    }
+  });
+});
+
+const setLocalStorage = (array) => {
+  localStorage.setItem("favorites", JSON.stringify(array));
+}
