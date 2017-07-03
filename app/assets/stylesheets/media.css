@@ -1,0 +1,41 @@
+@media (max-width: 1120px) {
+  body {
+    display: block;
+  }
+
+  .image-container {
+    background-image: none;
+    background: green;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 10px 10px 50px;
+  }
+
+  .image-container img {
+    margin: 0;
+  }
+
+  .links {
+    flex-direction: row;
+  }
+
+  .search {
+    margin: auto;
+    width: 500px;
+  }
+
+  .search h1 {
+    margin-top: 195px;
+  }
+
+  .search form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  body {
+    background: red;
+  }
+}
