@@ -15,23 +15,28 @@ h1 {
   width: 30%;
   background-image: image-url("map.png");
   background-size:cover;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.image-container > div {
+/*.image-container > div {
   position: absolute;
   top: 0px;
   right: 0px;
-}
+}*/
 
-.image-container div img {
+.image-container img {
   margin: 50px 50px 0px 0px;
 }
 
 .links {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 50%;
+  /*justify-content: flex-end;*/
+  height: 59%;
+  /*background: blue;*/
 }
 
 .links a {
