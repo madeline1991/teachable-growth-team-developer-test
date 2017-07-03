@@ -1,16 +1,16 @@
 $(document).ready(function () {
   const $favorites = $('#favorites-list')
+  let storage = getLocalStorage();
 
   if ($favorites.length > 0) {
-    loadFavorites($favorites);
+    loadFavorites($favorites, storage);
   }
-  
-  swapStars();
-  setStarToggle();
+
+  swapStars(storage);
+  setStarToggle(storage);
 });
 
-const loadFavorites = ($listContainer) => {
-  let storage = getLocalStorage();
+const loadFavorites = ($listContainer, storage) => {
   for(let i = 0; i < storage.length; i++) {
     const gem = storage[i];
     const button = returnButton(gem);
@@ -21,8 +21,7 @@ const loadFavorites = ($listContainer) => {
   }
 }
 
-const swapStars = () => {
-  let storage = getLocalStorage();
+const swapStars = (storage) => {
   let starButtons = $(".toggle")
   for(let i = 0; i < starButtons.length; i++) {
     const $button = $(starButtons[i]);
@@ -33,9 +32,8 @@ const swapStars = () => {
   };
 }
 
-const setStarToggle = () => {
+const setStarToggle = (storage) => {
   $(".toggle").click(function(e) {
-    let storage = getLocalStorage();
     const $image = $(e.target);
     const gem = $image.parent().attr('id');
     if (storage.includes(gem)) {
