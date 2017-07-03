@@ -10,16 +10,20 @@ $(document).ready(function () {
   }
 
   swapStars(storage);
-  setStarToggle(storage);
+  setStarToggle();
 });
 
 const loadFavorites = ($listContainer, storage) => {
-  for(let i = 0; i < storage.length; i++) {
-    const gem = storage[i];
-    const button = returnButton(gem);
-    const link = "<a href=\"https://rubygems.org/gems/" + gem +"\">" + gem + "</a>"
-    const element = "<li>" + button + link + "</li>"
-  $listContainer.append(element);
+  if (storage.length === 0) {
+    $listContainer.append("<li>None</li>")
+  } else {
+    for(let i = 0; i < storage.length; i++) {
+      const gem = storage[i];
+      const button = returnButton(gem);
+      const link = "<a href=\"https://rubygems.org/gems/" + gem +"\">" + gem + "</a>"
+      const element = "<li>" + button + link + "</li>"
+    $listContainer.append(element);
+    }
   }
 }
 
@@ -34,8 +38,9 @@ const swapStars = (storage) => {
   };
 }
 
-const setStarToggle = (storage) => {
+const setStarToggle = () => {
   $(".toggle").click(function(e) {
+    let storage = getLocalStorage();
     const $image = $(e.target);
     const gem = $image.parent().attr('id');
     if (storage.includes(gem)) {
