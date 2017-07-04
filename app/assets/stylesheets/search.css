@@ -1,8 +1,4 @@
 .search {
-  /*display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 41%;*/
   width: 780px;
   margin-top: 210px;
 }
@@ -26,11 +22,6 @@
 .search button {
   margin-left: 2px;
 }
-
-  /*.search button img {
-    height: auto;
-    width: 17px;
-  }*/
 
 input:focus, button:focus {
    outline: none;

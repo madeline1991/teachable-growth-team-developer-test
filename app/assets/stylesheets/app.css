@@ -23,12 +23,6 @@ h1 {
   justify-content: space-between;
 }
 
-/*.image-container > div {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}*/
-
 .image-container img {
   margin: 50px 50px 0px 0px;
 }
@@ -36,9 +30,7 @@ h1 {
 .links {
   display: flex;
   flex-direction: column;
-  /*justify-content: flex-end;*/
   height: 59%;
-  /*background: blue;*/
 }
 
 .links a {
