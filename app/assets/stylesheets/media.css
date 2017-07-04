@@ -38,6 +38,10 @@
     width: 100%;
   }
 
+  .gem ul {
+    height: 100%;
+  }
+
   .favorites ul {
     width: 700px;
   }
@@ -48,9 +52,6 @@
 }
 
 @media (max-width: 550px) {
-  body {
-    background: red;
-  }
 
   .search, .gem-details-container {
     width: 400px;
@@ -70,9 +71,6 @@
 }
 
 @media (max-width: 440px) {
-  body {
-    /*background: blue;*/
-  }
 
   .search, .gem-details-container {
     margin: auto;
