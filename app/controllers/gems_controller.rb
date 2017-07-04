@@ -20,16 +20,4 @@ class GemsController < ApplicationController
     gems = Gems.search "#{@search_term}"
     gems.select { |gem| gem["name"] == search_term }
   end
-  # def index
-  #   search_term = params["gem"]["search_term"]
-  #   if Gems.search "#{search_term.downcase}"
-  #     @gem = Gems.search "#{search_term.downcase}"
-  #         debugger
-  #     dependencies = @gem['dependencies']
-  #     @dependencies = dependencies["development"] + dependencies["runtime"]
-  #     render :index
-  #   else
-  #     redirect_to root_url
-  #   end
-  # end
 end
