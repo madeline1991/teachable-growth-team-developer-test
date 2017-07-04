@@ -15,7 +15,7 @@ h1 {
   width: 30%;
   background-image: image-url("map.png");
   background-size:cover;
-  background-position: center center; /* First value is from left and second is from top. You can use use number as well*/
+  background-position: center center;
    background-repeat:no-repeat;
   display: flex;
   flex-direction: column;

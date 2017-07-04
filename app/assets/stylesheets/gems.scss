@@ -11,6 +11,14 @@
   color: 	#C0C0C0;
 }
 
+.gem ul {
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 370px;
+}
+
 .gem li {
   margin-bottom: 30px;
 }

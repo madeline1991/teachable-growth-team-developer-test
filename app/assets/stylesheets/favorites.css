@@ -1,5 +1,6 @@
 .favorites {
   margin-top: 195px;
+  width: 70%;
 }
 
 .favorites h1 {
@@ -8,14 +9,14 @@
 
 .favorites ul {
   display: flex;
-  flex-direction: column;
+  width: 1000px;
   flex-wrap: wrap;
-  height: 300px;
 }
 
 .favorites li {
   color: 	#C0C0C0;
-  margin-right: 230px;
+  width: 225px;
+  margin-right: 100px;
 }
 
 .favorites a {
