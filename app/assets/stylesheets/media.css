@@ -13,16 +13,21 @@
   }
 
   .image-container img {
-    margin: 0;
+    margin: 0 14px 0 0;
   }
 
   .links {
     flex-direction: row;
   }
 
-  .search {
+  .search, .gem-details-container {
     margin: auto;
     width: 500px;
+  }
+
+  .gem-details {
+    margin-left: 40px;
+    width: 420px;
   }
 
   .search h1 {
@@ -34,8 +39,41 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   body {
-    background: red;
+    /*background: red;*/
   }
+
+  .search, .gem-details-container {
+    width: 400px;
+  }
+
+  .gem-details {
+    width: 320px;
+  }
+
+  .search input {
+    width: 92%;
+  }
+}
+
+@media (max-width: 440px) {
+  body {
+    /*background: blue;*/
+  }
+
+  .search, .gem-details-container {
+    margin: auto;
+    width: 350px;
+  }
+
+  .gem-details {
+    margin-left: 40px;
+    width: 270px;
+  }
+
+  .search input {
+    width: 91%;
+  }
+
 }
