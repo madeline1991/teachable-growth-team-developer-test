@@ -6,7 +6,6 @@ class GemsController < ApplicationController
       flash.now[:errors] = "Oh no! Looks like that gem can't be found."
     else
       @search_term = ""
-      @gem = @gem[0]
       dependencies = @gem['dependencies']
       @dependencies = dependencies["development"] + dependencies["runtime"]
     end
@@ -17,7 +16,11 @@ class GemsController < ApplicationController
 
   def find_gem(search_term)
     search_term = (params["gem"]["search_term"]).downcase
-    gems = Gems.search "#{@search_term}"
-    gems.select { |gem| gem["name"] == search_term }
+    begin
+      gem = (Gems.info "#{@search_term}")
+    rescue JSON::ParserError => error
+      return {}
+    end
+    gem
   end
 end
