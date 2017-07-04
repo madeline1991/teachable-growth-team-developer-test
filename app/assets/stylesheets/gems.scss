@@ -5,6 +5,7 @@
 
 .gem-details h3 {
   font-size: 16px;
+  margin: 35px 0 20px 0;
 }
 
 .gem-details p {
@@ -20,7 +21,7 @@
 }
 
 .gem li {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .gem a {
@@ -34,8 +35,4 @@
 .gem a:hover {
   text-decoration: underline;
   color: 	#0080FF;
-}
-
-.gem-details h3 {
-  margin: 35px 0 10px 0;
 }
